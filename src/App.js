@@ -62,13 +62,15 @@ else{
   }
 
 
-  return (  
-  <div className="App">
+  return (
+  <div >  
     <button className = "button-cwallet" onClick={connectWallet}>Connect Wallet</button>
-    <h3 id="address"></h3>
-    <button className = "button-entry" onClick={entry}>Entry</button>
-    <button className = "button-pick" onClick={pickwinner}>Pick Winnner</button>
-    <h3 id="pick"></h3>
+    <div className="App">
+      <h3 id="address"></h3>
+      <button className = "button-entry" onClick={entry}>Entry</button>
+      <button className = "button-pick" onClick={pickwinner}>Pick Winner</button>
+      <h3 id="pick"></h3>
+    </div>
   </div>
   );
 }
