@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ethers,utils } from 'ethers';
 import abi from "./utils/Lottery.json";
+import './App.css';
 function App() {
 
   const contractAddress = '0x7EEfa9A072CFe672D219929BbB4f213cdDc9aa2E';
@@ -8,7 +9,6 @@ function App() {
   const connectWallet = async()=>{
 if(window.ethereum == undefined){
   console.log("Install metamask");
-
 }
 else{
   const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
@@ -63,13 +63,15 @@ else{
 
 
   return (
+  <div >  
+    <button className = "button-cwallet" onClick={connectWallet}>Connect Wallet</button>
     <div className="App">
-   <button onClick={connectWallet}>Connect wallet</button>
-   <h3 id="address"></h3>
-   <button onClick={entry}>entry</button><br />
-   <button onClick={pickwinner}>pick winnner</button>
-   <h3 id="pick"></h3>
+      <h3 id="address"></h3>
+      <button className = "button-entry" onClick={entry}>Entry</button>
+      <button className = "button-pick" onClick={pickwinner}>Pick Winner</button>
+      <h3 id="pick"></h3>
     </div>
+  </div>
   );
 }
 
